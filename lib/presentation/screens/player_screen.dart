@@ -116,6 +116,11 @@ class _PlayerScreenState extends State<PlayerScreen>
     });
   }
 
+  void _toggleControls() {
+    setState(() => _showControls = !_showControls);
+    if (_showControls) _startControlsTimer();
+  }
+
   void _disposeOld(VideoPlayerController old, VoidCallback? listener) {
     Future(() async {
       try {
